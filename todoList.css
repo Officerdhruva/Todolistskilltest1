@@ -1,0 +1,215 @@
+*,*::after,*::before{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+.container{
+    width: 80%;
+    max-width: 700px;
+    min-width: 500px;
+    margin: auto 10px;
+    padding: 30px;
+    background-color: rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    background: #ff00cc;
+    background: -webkit-linear-gradient(
+        to right,
+        #333399,
+        #ff00cc
+    );
+    background: linear-gradient(
+        to right,
+        #333399,
+        #ff00cc
+    ); 
+
+}
+.todoList{
+    background-color: white;
+    padding: 15px;
+    background: white;
+    background: linear-gradient(
+        to right bottom,
+        rgba(255, 255, 255, 0.9),
+        rgba(255, 255, 255, 0.8)
+    );
+    backdrop-filter: blur(1rem);
+    box-shadow: 0 0 1rem rgba(0, 0, 0, 0.9);
+    border-radius: 1rem;
+    
+}
+/* // Input Section start  */
+.takeInputDiv{
+    position: relative;
+}
+.takeInputDiv input{
+    width: 100%;
+    border: none;
+    height: 50px;
+    border-radius: 7px;
+    padding: 10px 7px;
+    outline: none;
+    font-size: 20px;
+    font-weight: 500;
+    text-wrap: wrap;
+    letter-spacing: 1px;
+    background-color: rgba(0, 0, 0, 0.07);
+}
+.takeInputDiv input:hover{
+    background-color: rgba(0, 0, 0, 0.1);
+
+}
+.listAddbutton {
+    position: absolute;
+    right: 10px;
+    top: 12px;
+    border: none;
+    height: 30px;
+    text-align: center;
+    width: 30px;
+    line-height: 18px;
+    /* padding: 10px 7px; */
+    outline: none;
+    font-size: 25px;
+    font-weight: 500;
+    border-radius: 50%;
+    border: 2px solid  #ff00cc;
+     cursor: pointer;
+    background-color:transparent;
+    color: #ff00cc;
+    transition: transform 0.5s ease;
+}
+.listAddbutton:hover,listAddbutton:focus{
+    transform: scale(1.1);
+}
+.todoListStatus{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px;
+    font-size: 13px;
+    color: rgba(0, 0, 0, .75);
+}
+
+/* INput Section end  */
+
+/* Display list items section start  */
+.displayListItemsDiv{
+    transition: all 1s ease;
+    padding: 10px;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+
+
+}
+ 
+.displayListItemsDiv .listItems{
+    display: flex;
+    align-items: center;
+    text-align: center;
+    margin: 10px 0px;
+    padding: 10px 0px;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 22px;
+    justify-content: space-between;
+    transition: all 0.5s ease;
+}
+.displayListItemsDiv .listItems p{
+    /* height: 40px; */
+    text-align: left;
+    width: 90%;
+    text-wrap: wrap;
+    overflow-x: scroll;
+    padding: 4px;
+}
+.displayListItemsDiv .listItems p::-webkit-scrollbar{
+    display: none;
+}
+ 
+.displayListItemsDiv .listItems .circle{
+    display: inline-block;
+    width: 17px;
+    height: 17px;
+    
+    border-radius: 50%;
+    border: 2px solid #333399;
+    position: relative;
+    /* background-color: rebeccapurple; */
+} 
+.completedListItem::before{
+position: absolute;
+content: '';
+width: 10px;
+ height: 10px;
+    border-radius: 50%;
+    background-color:  #333399;
+    left: 2px;
+    top: 2px;
+
+}
+.displayListItemsDiv .listItems .circle:hover{
+    transform: scale(1.2);
+}
+.displayListItemsDiv .listItems .listRemoveBtn{
+    border: 2px solid #ff00cc ;
+    border-radius: 50%;
+    margin: auto 5px;
+    display: block;
+    align-items: center;
+    justify-content: center;
+    width: 25px;
+    height: 25px;
+    font-size: 17px;
+    color: #ff00cc;
+    cursor: pointer;
+    transition: transform .5s ease;
+    
+}
+.displayListItemsDiv .listItems .listRemoveBtn:hover{
+    transform: scale(1.1);
+}
+/* Display list items section End  */
+
+/* footer Start  */
+
+footer{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+footer .task-count{
+    display: flex;
+    
+}
+footer .task-count p{
+    font-size: 15px;
+    margin-left: 5px;
+}
+footer .task-types{
+    display: flex;
+
+}
+footer .task-types p{
+    margin: 0px 5px;
+    cursor: pointer;
+    transition: transform .5s ease;
+ color: rgba(0, 0, 0, .65);
+}
+footer .task-types p:hover{
+    
+    transform: scale(1.05)
+}
+.active{
+    color: black !important;
+}
+ 
+/* footer End */

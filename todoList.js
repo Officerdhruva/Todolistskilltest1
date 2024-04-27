@@ -11,13 +11,13 @@ const UncompleteListShowEl=document.getElementById('Uncomplete')
 const CompletedListShowEl=document.getElementById('Completed')
 
 // Data Sets
-const allTasks=[ ];
+let allTasks=[ ];
 // Add event Listner 
 
 inputEl.addEventListener('keydown',(e)=>{
     if(e.key==='Enter'){
         if(inputEl.value==='') return;
-        const listValue=inputEl.value ;
+        const listValue=inputEl.value.trim() ;
         addListIemsToContainer(listValue);
         allTasks.push({task:inputEl.value,isComplete:false});  
         inputEl.value='';  
@@ -27,7 +27,7 @@ inputEl.addEventListener('keydown',(e)=>{
 })
 addListItemEl.addEventListener('click',()=>{
     if(inputEl.value==='') return;
-    const listValue=inputEl.value ;
+    const listValue=inputEl.value.trim() ;
     addListIemsToContainer(listValue);
     allTasks.push({task:inputEl.value,isComplete:false});  
     inputEl.value='';  
@@ -64,14 +64,19 @@ listItemsContainerDiv.appendChild(divEl);
     }
     // Adding event Listner to remove Btn
     removeBtn.addEventListener('click',(e)=>{
+        // if(!checkboxEl.classList.contains('completedListItem')){
+
+        // }
+        const value=e.target.parentNode.firstElementChild.textContent.trim();
+        // allTasks.find((item)=>{
+        //     if(item.task==value){
+        //         allTasks.pop(item);
+        //         console.log(item);
+        //     }
+        // })
+        allTasks = allTasks.filter(item => item.task !== value);
         e.target.parentNode.remove();
-        if(!checkboxEl.classList.contains('completedListItem')){
-        }
-        allTasks.map((item)=>{
-            if(item.task===listValue){
-                allTasks.pop(item);
-            }
-        })
+
         updateAllDetails();
         });
         // Adding Eveent listner to checkBox

@@ -192,6 +192,7 @@ footer{
 }
 footer .task-count{
     display: flex;
+    align-items: center;
     
 }
 footer .task-count p{
@@ -264,6 +265,12 @@ footer .task-types p:hover{
     footer>div{
         font-size: 13px;
         margin: 5px 0px;
+    }
+    .task-count p{
+        font-size: 13px !important;
+    }
+    #listCount{
+        font-size: 15px;
     }
     
     
